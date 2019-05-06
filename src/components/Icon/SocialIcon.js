@@ -1,20 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
+import "./SocialIcon.scss"
 const defaultValue = {
-    className: "btn btn-social-icon btn-google",
-    iconName: "fa fa-google-plus",
-    href: "http://google.com/+",
-    style: {}
+  // className: "btn btn-social-icon btn-google",
+  iconName: "fa fa-google-plus",
+  href: "http://google.com/+",
+  style: {},
 }
 export default class SocialIcon extends Component {
-    render(){
-        return(
-            <a
-            style={defaultValue.style || this.props.style}
-            className={defaultValue.className || this.props.className}
-            href= {defaultValue.href || this.props.href}
-            >
-            <i className= {defaultValue.iconName || this.props.iconName/>
-          </a>
-        )
-    }
+  render() {
+    return (
+      <a
+        // className={defaultValue.className || this.props.className}
+        style={this.props.style || defaultValue.style}
+        href={this.props.href || defaultValue.href}
+      >
+        <i className={this.props.iconName || defaultValue.iconName} />
+      </a>
+    )
+  }
 }

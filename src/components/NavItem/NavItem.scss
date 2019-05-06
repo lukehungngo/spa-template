@@ -1,0 +1,21 @@
+@import '../../assets/colors';
+@import '../../assets/measures';
+
+li {
+    margin-left: auto;
+    padding: $paddingSmall;
+    color: inherit;
+    a {
+        color: $textColor;
+    }
+    div {
+        height: 2px;
+        background-color: $primaryColor;
+        width: 0%;
+        transition: width 0.2s, background-color 0.5s;
+        margin: $marginNone auto;
+    }
+    .active-link div {
+        width: 100%;
+    }
+}
