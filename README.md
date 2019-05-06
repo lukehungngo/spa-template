@@ -1,5 +1,4 @@
-#Source Code Structure
-
+Source Code Structure
 1. components
 - All root component can be use globally everywhere.
 - Does not maintain states (stateless component).
@@ -17,3 +16,6 @@
     + Color
     + Font
     + Measurement
+
+SCSS
+- SCSS will be used beacuse of those ability: mixins, global variables, nesting and so on.
