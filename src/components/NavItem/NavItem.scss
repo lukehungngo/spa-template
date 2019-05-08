@@ -1,7 +1,7 @@
 @import '../../assets/colors';
 @import '../../assets/measures';
 
-li {
+nav {
     margin-left: auto;
     padding: $paddingSmall;
     color: inherit;
@@ -15,7 +15,7 @@ li {
         transition: width 0.2s, background-color 0.5s;
         margin: $marginNone auto;
     }
-    .active-link div {
+    div .active-link {
         width: 100%;
     }
 }

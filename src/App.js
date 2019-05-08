@@ -1,12 +1,29 @@
 import React from "react"
-import logo from "./logo.svg"
+import "./App.css"
 import Footer from "./pages/Footer/Footer"
-import "./App.scss"
-
+import Header from "./pages/Header/Header"
+import Introduction from "./pages/Introduction/Introduction"
+import Service from "./pages/Service/Service"
 function App() {
   return (
     <div className="App">
-      <Footer />
+      <div style={{ overflowX: "hidden" }}>
+        <div>
+          <Header />
+          <div
+            style={{ marginTop: "1em", marginBottom: "5em" }}
+            id="introduction"
+          >
+            <Introduction />
+          </div>
+          <div style={{ marginTop: "5em", marginBottom: "5em" }} id="service">
+            <Service />
+          </div>
+          <div style={{ marginTop: "5em", marginBottom: "5em" }} id="footer">
+            <Footer />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
