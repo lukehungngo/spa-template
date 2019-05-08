@@ -16,7 +16,7 @@ function Service() {
         <br />
         <br />
         <div className="row justify-content-center">
-          <div className="col-12 col-md-4" style={{ padding: "0px" }}>
+          <div className="col-12 col-md-4">
             <Card className="card-service col align-items-center">
               <div className="row justify-content-center">
                 <img

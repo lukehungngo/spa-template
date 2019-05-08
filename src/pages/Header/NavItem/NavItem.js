@@ -13,7 +13,6 @@ const defaultValue = {
 }
 export default class StyledNavItem extends Component {
   render() {
-    console.log(this.props.title + " is active: " + this.props.isActiveLink)
     return (
       <NavItem>
         <Link

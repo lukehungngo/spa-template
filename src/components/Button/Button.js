@@ -3,8 +3,14 @@ import { Button } from "reactstrap"
 import "./button.scss"
 const defaultValue = {
   type: "primary",
-  style: {},
-  text: "missing text",
+  style: {
+    margin: "10px",
+    paddingTop: "10px",
+    paddingBottom: "10px",
+    paddingLeft: "18px",
+    paddingRight: "18px",
+  },
+  title: "missing title",
   onClick: () => {},
 }
 export default class StyledButton extends Component {
@@ -15,7 +21,7 @@ export default class StyledButton extends Component {
         style={this.props.style || defaultValue.style}
         onClick={this.props.onClick || defaultValue.onClick}
       >
-        {this.props.text || defaultValue.text}
+        {this.props.title || defaultValue.title}
       </Button>
     )
   }
