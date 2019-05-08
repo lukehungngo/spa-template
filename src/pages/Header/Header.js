@@ -1,12 +1,10 @@
 import React, { Component } from "react"
 import _ from "lodash"
+import './Header.scss'
 import { Navbar, NavbarBrand, Nav, Collapse } from "reactstrap"
-import NavItem from "../../components/NavItem/NavItem"
+import NavItem from "./NavItem/NavItem"
 import logo from "../../assets/Images/tsf-logo.png"
-import { Link, animateScroll as scroll } from "react-scroll"
-const defaultValue = {
-  listItem: ["introduction", "service", "whyus", "blog", "contact"],
-}
+import { animateScroll as scroll } from "react-scroll"
 export default class Header extends Component {
   constructor(props) {
     super(props)
@@ -18,7 +16,7 @@ export default class Header extends Component {
         service: false,
         whyus: false,
         blog: false,
-        contact: false,
+        footer: false,
       },
     }
   }
@@ -52,10 +50,28 @@ export default class Header extends Component {
   }
   scrollToggleNavbar = () => {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-      this.setState({ nav: "nav top" })
-    } else {
       this.setState({ nav: "nav scroll" })
+    } else {
+      this.setState({ nav: "nav top" })
+      this.toggleActiveLink(this.props.sections.introduction)
     }
+  }
+  renderNavItem = () => {
+    let navItems = []
+    _.forIn(this.props.sections, (value, key) => {
+      if (this.props.sections.hasOwnProperty(key)) {
+        const navItem = <NavItem
+          key={value}
+          onSetActive={() => this.toggleActiveLink(value)}
+          scrollTo={value}
+          onClick={this.toggleNav}
+          title={value.charAt(0).toUpperCase() + value.slice(1)}
+          isActiveLink={this.state.isActiveLink[value]}
+        />
+        navItems.push(navItem)
+      }
+    })
+    return navItems
   }
   render() {
     const collapseIcon = this.state.isNavOpen
@@ -87,28 +103,8 @@ export default class Header extends Component {
             <span className="fa fa-align-justify" />
           </button>
           <Collapse isOpen={this.state.isNavOpen} navbar>
-            <Nav navbar className={"row ml-auto"} style={{ margin: "5px" }}>
-              <NavItem
-                onSetActive={()=> this.toggleActiveLink("introduction")}
-                scrollTo={"introduction"}
-                onClick={this.toggleNav}
-                title={"Introduction"}
-                isActiveLink={this.state.isActiveLink.introduction}
-              />
-              <NavItem
-                onSetActive={()=>this.toggleActiveLink("service")}
-                scrollTo={"service"}
-                onClick={this.toggleNav}
-                title={"Service"}
-                isActiveLink={this.state.isActiveLink.service}
-              />
-              <NavItem
-                onSetActive={()=>this.toggleActiveLink("footer")}
-                scrollTo={"footer"}
-                onClick={this.toggleNav}
-                title={"Footer"}
-                isActiveLink={this.state.isActiveLink.footer}
-              />
+            <Nav navbar className="row ml-auto">
+              {this.renderNavItem()}
             </Nav>
           </Collapse>
         </div>

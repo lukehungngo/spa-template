@@ -13,9 +13,11 @@ const defaultValue = {
 }
 export default class StyledNavItem extends Component {
   render() {
+    console.log(this.props.title + " is active: " + this.props.isActiveLink)
     return (
       <NavItem>
         <Link
+          className="text-color"
           onSetActive={this.props.onSetActive || defaultValue.onSetActive}
           onClick={this.props.onClick || defaultValue.onClick}
           activeClass="active"
@@ -27,7 +29,7 @@ export default class StyledNavItem extends Component {
         >
           {this.props.title || defaultValue.title}
         </Link>
-        {this.props.isActiveLink ? <div /> : <div className="active-link" />}
+        {!this.props.isActiveLink ? <div></div> : <div className="active-link"></div>}
       </NavItem>
     )
   }
