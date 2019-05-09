@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import _ from "lodash"
-import './Header.scss'
+import "./Header.scss"
 import { Navbar, NavbarBrand, Nav, Collapse } from "reactstrap"
 import NavItem from "./NavItem/NavItem"
 import logo from "../../assets/Images/tsf-logo.png"
@@ -25,7 +25,7 @@ export default class Header extends Component {
       isNavOpen: !this.state.isNavOpen,
     })
   }
-  toggleActiveLink = (section) => {
+  toggleActiveLink = section => {
     let newIsActiveLink = this.state.isActiveLink
     _.forIn(this.state.isActiveLink, (value, key) => {
       if (this.state.isActiveLink.hasOwnProperty(key)) {
@@ -60,14 +60,16 @@ export default class Header extends Component {
     let navItems = []
     _.forIn(this.props.sections, (value, key) => {
       if (this.props.sections.hasOwnProperty(key)) {
-        const navItem = <NavItem
-          key={value}
-          onSetActive={() => this.toggleActiveLink(value)}
-          scrollTo={value}
-          onClick={this.toggleNav}
-          title={value.charAt(0).toUpperCase() + value.slice(1)}
-          isActiveLink={this.state.isActiveLink[value]}
-        />
+        const navItem = (
+          <NavItem
+            key={value}
+            onSetActive={() => this.toggleActiveLink(value)}
+            scrollTo={value}
+            onClick={this.toggleNav}
+            title={value.charAt(0).toUpperCase() + value.slice(1)}
+            isActiveLink={this.state.isActiveLink[value]}
+          />
+        )
         navItems.push(navItem)
       }
     })

@@ -28,7 +28,7 @@ export default class StyledNavItem extends Component {
         >
           {this.props.title || defaultValue.title}
         </Link>
-        {!this.props.isActiveLink ? <div></div> : <div className="active-link"></div>}
+        {!this.props.isActiveLink ? <div /> : <div className="active-link" />}
       </NavItem>
     )
   }

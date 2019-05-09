@@ -10,7 +10,6 @@ const defaultValue = {
 }
 export default function Footer() {
   return (
-    <div className="footer">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-md-6 col">
@@ -62,6 +61,5 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
   )
 }

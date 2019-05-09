@@ -1,0 +1,17 @@
+@import '../../assets/colors';
+@import '../../assets/measures';
+main-container {
+    overflow-x: hidden;
+}
+white-container {
+    background-color: $backgroundWhite;
+    padding: $paddingSmall;
+    margin-top: $marginMedium;
+    margin-bottom: $marginMedium;
+}
+lightgrey-container {
+    background-color: $backgroundLightgrey;
+    padding: $paddingSmall;
+    margin-top: $marginMedium;
+    margin-bottom: $marginMedium;
+}
