@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import Button from "../../../components/Button/Button"
 import introductionImage from "../../../assets/Images/illu-solution-2.png"
 import "../Introduction.scss"
-import { slogan } from "../constant"
 class IntroductionMobile extends Component {
   render() {
     return (
@@ -20,11 +19,11 @@ class IntroductionMobile extends Component {
           <div className="col justify-content-center">
             <div className="row justify-content-center">
               <span className="introduction-mobile-text">
-                {slogan.slice(0, 3).join(" ")}
+                {this.props.slogan.slice(0, 3).join(" ")}
               </span>
               <br />
               <span className="introduction-mobile-text">
-                {slogan.slice(3).join(" ")}
+                {this.props.slogan.slice(3).join(" ")}
               </span>
               <br />
             </div>

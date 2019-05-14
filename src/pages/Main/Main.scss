@@ -1,17 +1,22 @@
 @import '../../assets/colors';
 @import '../../assets/measures';
-main-container {
+.main-container {
     overflow-x: hidden;
 }
-white-container {
-    background-color: $backgroundWhite;
-    padding: $paddingSmall;
-    margin-top: $marginMedium;
-    margin-bottom: $marginMedium;
+.header-container{
+    background-color: transparent;
 }
-lightgrey-container {
+.white-container {
+    background-color: $backgroundWhite;
+    padding-top: $paddingHuge;
+    padding-bottom: $paddingHuge;
+    margin-top: $marginHuge;
+    margin-bottom: $marginHuge;
+}
+.lightgrey-container {
     background-color: $backgroundLightgrey;
-    padding: $paddingSmall;
-    margin-top: $marginMedium;
-    margin-bottom: $marginMedium;
+    padding-top: $paddingHuge;
+    padding-bottom: $paddingHuge;
+    margin-top: $marginHuge;
+    margin-bottom: $marginHuge;
 }

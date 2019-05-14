@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import IntroductionWeb from "./Introduction/IntroductionWeb"
 import IntroductionMobile from "./Introduction/IntroductionMobile"
+import * as constant from './constant'
 class Introduction extends Component {
   constructor(props) {
     super(props)
@@ -25,7 +26,7 @@ class Introduction extends Component {
   render() {
     return (
       <div className="container">
-        {this.state.isMobile ? <IntroductionMobile /> : <IntroductionWeb />}
+        {this.state.isMobile ? <IntroductionMobile slogan={constant.Slogan}/> : <IntroductionWeb slogan={constant.Slogan}/>}
       </div>
     )
   }

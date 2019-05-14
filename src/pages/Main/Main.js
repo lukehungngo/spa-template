@@ -13,8 +13,8 @@ export default class Main extends Component {
     render() {
         return(
           <div className="main-container">
-            <div>
-            <Header sections={sections} />
+            <div className="header-container">
+                <Header sections={sections} />
             <div
                 className="white-container"
                 id={sections.introduction}
@@ -28,7 +28,6 @@ export default class Main extends Component {
                 <Service />
             </div>
             <div
-                style={{ marginTop: "5em", marginBottom: "5em" }}
                 id={sections.footer}
             >
                 <Footer />

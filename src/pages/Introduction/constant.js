@@ -1,4 +1,4 @@
-export const slogan = [
+export const Slogan = [
   "Better",
   "Your",
   "Performance",

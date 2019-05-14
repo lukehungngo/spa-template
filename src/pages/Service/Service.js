@@ -40,7 +40,9 @@ export default class Service extends Component {
     return (
       <div className="container">
         <div className="col service-intro-container">
-          <h3 className="service-intro-title">OUR SERVICES</h3>
+          <h3 className="service-intro-title">
+            OUR SERVICES
+          </h3>
           <h1 className="service-intro-description">
             Making Ideas Come to Life !
           </h1>
